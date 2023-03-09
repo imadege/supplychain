@@ -20,7 +20,7 @@ function Header() {
     <header>
       <Navbar bg="light" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Supply chain</Navbar.Brand>
+          <Navbar.Brand href="/">Supply chain</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -28,7 +28,6 @@ function Header() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="/">Home</Nav.Link>
               {userInfo ? (
                 <NavDropdown title={userInfo.email} id="username">
                   <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
