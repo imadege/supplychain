@@ -1,14 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from 'react';
-import {
-  Button, Col, Form, Row,
-} from 'react-bootstrap';
+import { Alert, Button, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { login } from '../actions/userActions';
 import FormContainer from '../components/FormContainer';
 import Loader from '../components/Loader';
-import Message from '../components/Message';
 
 function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -33,11 +30,12 @@ function LoginScreen() {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login({ email, password }));
+    navigate('/');
   };
   return (
     <FormContainer>
       <h1>Sign In</h1>
-      { error && <Message variant="danger">{error}</Message>}
+      { error && <Alert variant="danger">{error}</Alert>}
       { loading && <Loader />}
 
       <Form onSubmit={submitHandler}>
@@ -67,14 +65,6 @@ function LoginScreen() {
         <Button type="submit" variant="primary">Sign In</Button>
 
       </Form>
-      <Row className="py-3">
-        <Col>
-          New Customer ?
-          <Link to="/register">
-            Register
-          </Link>
-        </Col>
-      </Row>
     </FormContainer>
   );
 }

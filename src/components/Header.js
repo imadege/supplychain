@@ -28,7 +28,7 @@ function Header() {
               navbarScroll
             >
               {userInfo ? (
-                <NavDropdown title={userInfo.email} id="username">
+                <NavDropdown title="User" id="username">
                   <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
                 </NavDropdown>
               ) : (

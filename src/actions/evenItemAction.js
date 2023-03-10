@@ -32,7 +32,7 @@ export const listEventItems = (search) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
@@ -66,7 +66,7 @@ export const deleteEventItem = (id) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
@@ -102,7 +102,7 @@ export const createEventItem = (item) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
@@ -143,7 +143,7 @@ export const getEventItemDetails = (id) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 

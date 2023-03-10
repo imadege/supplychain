@@ -67,11 +67,11 @@ function EditItem({ itemVisible, selectedItem, handleItemModalClose }) {
             />
           </Form.Group>
 
-          <Form.Group controlId="serves per item">
-            <Form.Label>Serves per item</Form.Label>
+          <Form.Group controlId="Item code">
+            <Form.Label>Item code</Form.Label>
             <Form.Control
-              type="price"
-              placeholder="Enter Serves per item"
+              type="itemCode"
+              placeholder="Enter item code"
               value={item_code}
               onChange={(e) => setItemCode(e.target.value)}
             />

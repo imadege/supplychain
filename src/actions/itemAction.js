@@ -34,7 +34,7 @@ export const listItems = (search) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
@@ -67,7 +67,7 @@ export const deleteItem = (id) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
@@ -103,7 +103,7 @@ export const updateItem = (item) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
@@ -144,7 +144,7 @@ export const createItem = (item) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
@@ -185,7 +185,7 @@ export const getItemDetails = (id) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-type': 'application/json',
-        // Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.access}`,
       },
     };
 
