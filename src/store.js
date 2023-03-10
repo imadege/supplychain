@@ -4,7 +4,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { userLoginReducer, userRegisterReducer } from './reducers/userReducer';
 import {
   itemCreateReducer, itemDeleteReducer, itemDetailsReducer, itemsListReducers, itemUpdateReducer,
-} from './reducers/weightReducer';
+} from './reducers/itemReducer';
+import {
+  eventItemCreateReducer, eventItemDeleteReducer, eventItemDetailsReducer, eventItemsListReducers,
+} from './reducers/itemEventReducer';
 
 const reducer = combineReducers({
   userLogin: userLoginReducer,
@@ -15,6 +18,11 @@ const reducer = combineReducers({
   itemUpdate: itemUpdateReducer,
   itemCreate: itemCreateReducer,
   itemDetails: itemDetailsReducer,
+
+  eventItemList: eventItemsListReducers,
+  eventItemDelete: eventItemDeleteReducer,
+  eventItemCreate: eventItemCreateReducer,
+  eventItemDetails: eventItemDetailsReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem('userInfo')

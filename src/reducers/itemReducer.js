@@ -21,13 +21,13 @@ import {
   ITEM_UPDATE_SUCCESS,
 } from '../constants/itemConstants';
 
-export const itemsListReducers = (state = { ITEMs: [] }, action) => {
+export const itemsListReducers = (state = { items: [] }, action) => {
   switch (action.type) {
     case ITEM_LIST_REQUEST:
-      return { loading: true, ITEMs: [] };
+      return { loading: true, items: [] };
 
     case ITEM_LIST_SUCCESS:
-      return { loading: false, ITEMs: action.payload };
+      return { loading: false, items: action.payload };
 
     case ITEM_LIST_FAIL:
       return { loading: false, error: action.payload };
@@ -97,7 +97,7 @@ export const itemDetailsReducer = (state = { item: {} }, action) => {
       return { ...state, loading: true };
 
     case ITEM_DETAILS_SUCCESS:
-      return { loading: false, ITEM: action.payload };
+      return { loading: false, item: action.payload };
 
     case ITEM_DETAILS_FAIL:
       return { loading: false, error: action.payload };

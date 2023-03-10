@@ -10,7 +10,7 @@ import { createItem } from '../actions/itemAction';
 import FormContainer from './FormContainer';
 import Loader from './Loader';
 
-function CreateItem() {
+function AddItem() {
   const [name, setName] = useState('');
   const [item_code, setItemCode] = useState('');
   const [price, setPrice] = useState('');
@@ -37,6 +37,7 @@ function CreateItem() {
     dispatch(createItem({
       name, color, price, item_code,
     }));
+    navigate('/');
   };
 
   return (
@@ -93,7 +94,7 @@ function CreateItem() {
 
         <br />
         <br />
-        <Button type="submit" variant="primary">Add</Button>
+        <Button type="submit" variant="primary">Add Item</Button>
 
       </Form>
 
@@ -101,4 +102,4 @@ function CreateItem() {
   );
 }
 
-export default CreateItem;
+export default AddItem;

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-  Button,
-  Container, Form, Nav, Navbar, NavDropdown,
+  Container, Nav, Navbar, NavDropdown,
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -41,15 +40,6 @@ function Header() {
                 </LinkContainer>
               )}
             </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -3,7 +3,8 @@ import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import CreateItem from './components/createItem';
+import CreateItem from './components/addItem';
+import AddEventItem from './components/AddEventItem';
 import Header from './components/Header';
 import HomeScreen from './components/HomeScreen';
 import SingleItem from './components/SingleItem';
@@ -23,7 +24,8 @@ function App() {
               <>
                 <Route path="/" element={<HomeScreen />} exact />
                 <Route path="/item/:id" element={<SingleItem />} exact />
-                <Route path="/create" element={<CreateItem />} exact />
+                <Route path="/create/item" element={<CreateItem />} exact />
+                <Route path="/create/event" element={<AddEventItem />} exact />
               </>
             ) : (
               <>
