@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { createItem } from '../actions/itemAction';
+import { createItem, listItems } from '../actions/itemAction';
 import FormContainer from './FormContainer';
 import Loader from './Loader';
 
@@ -37,7 +37,10 @@ function AddItem() {
     dispatch(createItem({
       name, color, price, item_code,
     }));
-    navigate('/');
+    if (!loading) {
+      dispatch(listItems(''));
+      navigate('/');
+    }
   };
 
   return (

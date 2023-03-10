@@ -15,21 +15,24 @@ function AddEventItem() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const itemsList = useSelector((state) => state.itemsList);
+  const { items = [], loading } = itemsList;
+
+  useEffect(() => {
+    dispatch(listEventItems());
+  }, [dispatch]);
 
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(createEventItem({
       event_type, item, event_description,
     }));
+    if (!loading) {
+      dispatch(listEventItems(''));
+      navigate('/');
+    }
     navigate('/');
   };
-
-  useEffect(() => {
-    dispatch(listEventItems());
-  }, [dispatch]);
-
-  const itemsList = useSelector((state) => state.itemsList);
-  const { items = [] } = itemsList;
 
   return (
     <FormContainer>
