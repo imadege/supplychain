@@ -190,7 +190,7 @@ function HomeScreen() {
       <EditItem
         itemVisible={itemVisible}
         selectedItem={selectedItem}
-        handleWeightModalClose={handleItemModalClose}
+        handleItemModalClose={handleItemModalClose}
       />
       )}
     </Container>

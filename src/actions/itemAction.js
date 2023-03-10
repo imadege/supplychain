@@ -100,6 +100,8 @@ export const updateItem = (item) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
+    console.log(userInfo.access, userInfo, 'userInfo.access');
+
     const config = {
       headers: {
         'Content-type': 'application/json',
@@ -107,7 +109,7 @@ export const updateItem = (item) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.put(
+    const { data } = await axios.patch(
       `/items/${item.id}/`,
       item,
       config,

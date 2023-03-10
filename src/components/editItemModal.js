@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { ITEM_UPDATE_RESET } from '../constants/itemConstants';
-import { getItemDetails, updateItem } from '../actions/itemAction';
+import { updateItem } from '../actions/itemAction';
 
 function EditItem({ itemVisible, selectedItem, handleItemModalClose }) {
   const [name, setName] = useState('');
@@ -28,8 +28,6 @@ function EditItem({ itemVisible, selectedItem, handleItemModalClose }) {
     if (successUpdate) {
       dispatch({ type: ITEM_UPDATE_RESET });
       navigate('/');
-    } else if (!item.item_code || item.id !== Number(selectedItem.id)) {
-      dispatch(getItemDetails(selectedItem.id));
     } else {
       setName(item.name);
       setPrice(item.price);
